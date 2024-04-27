@@ -1,8 +1,17 @@
+import { useLoaderData } from "react-router-dom";
+import TouristsSpotsSection from "../components/TouristsSpotsSection";
 
 const Home = () => {
+
+    const touristsSpots = useLoaderData();
     return (
         <div>
-            <h2>Home Page</h2>
+            {
+                touristsSpots.map(sport =><TouristsSpotsSection
+                key={sport._id} sport={sport}
+                >
+                </TouristsSpotsSection>)
+            }
         </div>
     );
 };
