@@ -3,11 +3,11 @@ import TouristsSpotsSection from "../components/TouristsSpotsSection";
 
 const Home = () => {
 
-    const touristsSpots = useLoaderData();
+    const spots = useLoaderData();
     return (
         <div>
             {
-                touristsSpots.map(sport =><TouristsSpotsSection
+                spots.map(sport =><TouristsSpotsSection
                 key={sport._id} sport={sport}
                 >
                 </TouristsSpotsSection>)

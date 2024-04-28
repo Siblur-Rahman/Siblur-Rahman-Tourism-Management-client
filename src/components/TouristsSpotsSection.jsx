@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const TouristsSpotsSection = ({sport}) => {
-    const {_id, country_Name} = sport
+    const {_id, country_Name, UserEmail} = sport
     // const id =_id;
     const handleDelete = _id => {
         Swal.fire({
@@ -49,9 +49,10 @@ const TouristsSpotsSection = ({sport}) => {
                             <div className="flex items-center gap-2"><span>{rating}</span><FaRegStar/></div>
                     </div> */}
 
-                {/* <Link to={`/View Details/${id}`} className="btn btn-success">View Details</Link> */}
-                {/* <Link to={`/View Details/${id}`} className="btn btn-success">View Details</Link> */}
-                <button onClick={()=> handleDelete(_id)}>Delete</button>
+                <Link to={`/viewdetails/${_id}`} className="btn btn-success">View Details</Link>
+                <Link to={`/mylist/${_id}`} className="btn btn-success">My List</Link>
+                <Link to={`/updatetouristsspot/${_id}`} className="btn btn-success">Update Sport</Link>
+                <button className="btn btn-warning" onClick={()=> handleDelete(_id)}>Delete</button>
             </div>
     </div>
     );
