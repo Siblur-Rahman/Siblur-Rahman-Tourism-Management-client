@@ -1,5 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
+import { ToastContainer } from 'react-toastify'
 // import App from './App.jsx'
 import {
   createBrowserRouter,
@@ -15,6 +16,10 @@ import ViewDetails from './pages/ViewDetails';
 import MyList from './pages/MyList.jsx';
 import Login from './pages/Login.jsx';
 import UpdateTouristsSpot from './pages/UpdateTouristsSpot.jsx';
+import Register from './pages/Register.jsx';
+import AuthProvider from './providers/AuthProvider.jsx';
+import Users from './pages/Users.jsx';
+import PrivateRoute from './routes/PrivateRoute'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,15 +40,24 @@ const router = createBrowserRouter([
       element: <ViewDetails></ViewDetails>,
       loader:({params}) => fetch(`http://localhost:5000/TouristsSpot/${params.id}`)
     },
-     { path: "/mylist/:email",
+     { path: "/mylist",
       element: <MyList></MyList>,
-      loader:({params}) => fetch(`http://localhost:5000/TouristsSpot/${params.email}`)
+      loader:() => fetch(`http://localhost:5000/TouristsSpot`)
+    },
+    {
+      path:'/register',
+      element: <Register></Register>,
     },
      { path: "/login",
       element: <Login></Login>,
     },
+     { path: "/users",
+      element: <Users></Users>,
+      loader:() => fetch(`http://localhost:5000/users`)
+
+    },
      { path: "/updatetouristsspot/:id",
-      element: <UpdateTouristsSpot></UpdateTouristsSpot>,
+      element: <PrivateRoute><UpdateTouristsSpot></UpdateTouristsSpot></PrivateRoute>,
       loader:({params}) => fetch(`http://localhost:5000/TouristsSpot/${params.id}`)
     },
     ]
@@ -52,6 +66,9 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+    <ToastContainer></ToastContainer>
   </React.StrictMode>,
 )

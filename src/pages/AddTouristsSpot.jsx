@@ -1,6 +1,11 @@
 import Swal from 'sweetalert2'
+import { AuthContext } from '../providers/AuthProvider';
+import { useContext } from 'react';
 
 const AddTouristsSpot = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
     const handleAddTouristsSpot = event =>{
         event.preventDefault();
         const form = event.target;
@@ -12,7 +17,7 @@ const AddTouristsSpot = () => {
         const seasonality = form.seasonality.value;
         const travel_time = form.travel_time.value;
         const totaVisitorsPerYear = form.totaVisitorsPerYear.value;
-        const UserEmail = form.UserEmail.value;
+        const UserEmail = user.email;
         const UserName = form.UserName.value;
         const newTouristsSpot ={image, tourists_spot_name, country_Name, location, short_description, seasonality, travel_time, totaVisitorsPerYear, UserEmail, UserName}
         console.log(newTouristsSpot)
@@ -36,6 +41,7 @@ const AddTouristsSpot = () => {
             form.reset()
           }
         })
+        console.log(UserName)
        }
     return (
         <div className="w-4/6 mx-auto border-2 p-10 bg-base-300">
@@ -109,7 +115,7 @@ const AddTouristsSpot = () => {
                         <label className="label">
                             <span className="">User Email</span>
                         </label>
-                        <input type="email" name="UserEmail" placeholder="User Email" className="input input-bordered" required />
+                        <input type="email" name="UserEmail" placeholder={user.email} disabled  className="input input-bordered" required />
                     </div>
 
                     {/* UserName */}
@@ -117,7 +123,7 @@ const AddTouristsSpot = () => {
                         <label className="label">
                             <span className="">User Name</span>
                         </label>
-                        <input type="text" name="UserName" placeholder="User Name" className="input input-bordered" required />
+                        <input type="text" name="UserName" defaultValue={user.name}className="input input-bordered" />
                     </div>
                     
                     <input type="submit" value="Add TouristsSpot" className="mt-5 w-full btn btn-success"/>
