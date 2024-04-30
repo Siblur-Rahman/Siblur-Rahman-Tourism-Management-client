@@ -28,26 +28,26 @@ const Login = () => {
                 })
             }
 
-            // const handleGoogleSignIn = () =>{
-            //     signInWithGoogle()
-            //     navigate("/")
-            //     .then(result =>{
-            //         console.log(result.user)
-            //     })
-            //     .catch(error =>{
-            //         console.log(error)
-            //     })
-            // }
-            // const handleGithubSignIn = () =>{
-            //     signInWithGithub()
-            //     navigate("/")
-            //     .then(result =>{
-            //         console.log(result.user)
-            //     })
-            //     .catch(error =>{
-            //         console.log(error)
-            //     })
-            // }
+            const handleGoogleSignIn = () =>{
+                signInWithGoogle()
+                navigate("/")
+                .then(result =>{
+                    console.log(result.user)
+                })
+                .catch(error =>{
+                    console.log(error)
+                })
+            }
+            const handleGithubSignIn = () =>{
+                signInWithGithub()
+                navigate("/")
+                .then(result =>{
+                    console.log(result.user)
+                })
+                .catch(error =>{
+                    console.log(error)
+                })
+            }
     return (
         <div className="hero">
             <div className="hero-content flex-col">
@@ -79,10 +79,10 @@ const Login = () => {
                     <Link to="/register"><button className="btn btn-link">REGISTER</button></Link>
                 </p>
                 <div className="divider">Countinue With</div>
-                {/* <div className="flex justify-between">
+                <div className="flex justify-between">
                     <p><button onClick={handleGoogleSignIn} className="btn">GOOGLE</button></p>
                     <p><button onClick={handleGithubSignIn} className="btn">GITHUB</button></p>
-                </div> */}
+                </div>
                 </div>
             </div>
         </div>
