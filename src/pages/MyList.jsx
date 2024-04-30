@@ -5,18 +5,13 @@ import { AuthContext } from "../providers/AuthProvider";
 import MyListTr from "../components/MyListTr";
 
 const MyList = () => {
-    // const [myLists, setMyLists] = useState([]);
+
     const { user, logOut } = useContext(AuthContext);
 
     const sports = useLoaderData();
     const myList = sports.filter(sport =>sport.UserEmail == user.email);
 
-    // useEffect(()=>{
-    //     fetch('http://localhost:5000/TouristsSpot')
-    //     .then(res => res.json())
-        // .then(data => setMyList(data.filter(sport =>sport.UserEmail == UserEmail)));
-    // }, [])
-    console.log()
+
     return (
         <div>
             <h2>MyList: {myList.length}</h2>
@@ -29,8 +24,8 @@ const MyList = () => {
                         <th>tourists_spot_name</th>
                         <th>country_Name</th>
                         <th>location</th>
-                        <th>Action-1</th>
-                        <th>Action-2</th>
+                        <th>update</th>
+                        <th>delete</th>
                     </tr>
                     </thead>
                     <tbody>

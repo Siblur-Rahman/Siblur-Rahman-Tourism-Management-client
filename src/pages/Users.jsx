@@ -20,7 +20,6 @@ const Users = () => {
                     {/* row 1 */}
                     {
                         loadedUsers.map(user =><tr>
-                            <th>{$}</th>
                             <td>{user.email}</td>
                             <td>Q</td>
                             <td>Blue</td>

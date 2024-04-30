@@ -42,8 +42,8 @@ const MyListTr = ({sport, index}) => {
                             <td>{tourists_spot_name}</td>
                             <td>{country_Name}</td>
                             <td>{location}</td>
+                            <td><Link to={`/updatetouristsspot/${_id}`} className="btn btn-success">Update</Link></td>
                             <td><button className="btn btn-warning" onClick={()=> handleDelete(_id)}>Delete</button></td>
-                            <td><Link to={`/updatetouristsspot/${_id}`} className="btn btn-success">Update Sport</Link></td>
                         </tr>
     );
 };

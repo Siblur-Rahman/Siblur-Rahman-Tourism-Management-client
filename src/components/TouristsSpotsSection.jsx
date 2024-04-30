@@ -52,7 +52,7 @@ const TouristsSpotsSection = ({sport}) => {
                 <Link to={`/viewdetails/${_id}`} className="btn btn-success">View Details</Link>
                 {/* <Link to={`/mylist/${_id}`} className="btn btn-success">My List</Link> */}
                 {/* <Link to={`/updatetouristsspot/${_id}`} className="btn btn-success">Update Sport</Link> */}
-                {/* <button className="btn btn-warning" onClick={()=> handleDelete(_id)}>Delete</button> */}
+                <button className="btn btn-warning" onClick={()=> handleDelete(_id)}>Delete</button>
             </div>
     </div>
     );

@@ -28,7 +28,7 @@ const Header = () => {
                 <li><NavLink to="/addtouristsspot">AddTouristsSpot</NavLink></li>
             </>}
             <li><NavLink to="/alltouristsspot">All Tourists Spot</NavLink></li>
-            <li><NavLink to="/users">Users</NavLink></li>
+            {/* <li><NavLink to="/users">Users</NavLink></li> */}
             </>
     return (
 
@@ -42,7 +42,7 @@ const Header = () => {
                         {navLink}
                     </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Your-Home</a>
+                    <a className="btn btn-ghost text-xl">TOURIST</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -55,7 +55,7 @@ const Header = () => {
                         user && <>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                            <img alt="" src={'https://i.ibb.co/SXC0ynb/developer-siblu.jpg'} />
+                            <img alt="" src={user.photoURL} />
                             </div>
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-6 p-2 shadow bg-base-100 rounded-box w-52 z-10">
