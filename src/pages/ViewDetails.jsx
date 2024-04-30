@@ -4,7 +4,9 @@ const ViewDetails = () => {
     const sport = useLoaderData();
     const {image, tourists_spot_name, country_Name, location, short_description, average_cost, seasonality, travel_time,totaVisitorsPerYear, UserEmail, UserName }= sport
     return (
-        <div className="hero h-[600px] bg-base-200 rounded-2xl my-[100px]">
+        <>
+        <h1 className="text-red-500 font-extrabold text-3xl text-center bg-slate-500 py-5"> View Details</h1>
+        <div className="hero h-[600px] bg-base-200 rounded-2xl my-[10px]">
         <div className="hero-content flex-col lg:flex-row-reverse flex-grow">
             <div className="lg:px-10">
                 <h2 className="card-title">{country_Name}</h2>
@@ -23,6 +25,7 @@ const ViewDetails = () => {
             <img src={image} className="max-w-sm rounded-lg h-[500px]" />
         </div>
     </div>
+        </>
     );
 };
 
