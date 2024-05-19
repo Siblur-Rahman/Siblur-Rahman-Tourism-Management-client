@@ -17,7 +17,7 @@ const MyListTr = ({sport, index}) => {
               }).then((result) => {
                 if (result.isConfirmed) {
     
-                fetch(`http://localhost:5000/TouristsSpot/${_id}`,{
+                fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${_id}`,{
                     method: 'DELETE'
                 })
                 .then(res => res.json())

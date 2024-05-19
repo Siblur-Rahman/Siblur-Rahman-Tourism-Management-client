@@ -21,7 +21,7 @@ const navigate = useNavigate();
         createUser(email, password)
         .then(()=>{
             const user = {email}
-            fetch('http://localhost:5000/user',{
+            fetch('https://assignment-10-server-side-mu-gules.vercel.app/user',{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

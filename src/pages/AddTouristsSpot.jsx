@@ -21,7 +21,7 @@ const AddTouristsSpot = () => {
         const UserName = form.UserName.value;
         const newTouristsSpot ={image, tourists_spot_name, country_Name, location, short_description, seasonality, travel_time, totaVisitorsPerYear, UserEmail, UserName}
         console.log(newTouristsSpot)
-        fetch('http://localhost:5000/TouristsSpot', {
+        fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot', {
           method: 'POST',
           headers:{
             'content-type': 'application/json'

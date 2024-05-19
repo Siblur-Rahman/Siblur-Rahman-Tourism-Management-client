@@ -28,22 +28,22 @@ const router = createBrowserRouter([
     children:[
      { path: "/",
       element: <Home></Home>,
-      loader: ()=> fetch('http://localhost:5000/TouristsSpot')
+      loader: ()=> fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot')
     },
      { path: "/addtouristsspot",
       element: <AddTouristsSpot></AddTouristsSpot>,
     },
      { path: "/alltouristsspot",
       element: <AllTouristsSpot></AllTouristsSpot>,
-      loader: ()=> fetch('http://localhost:5000/TouristsSpot')
+      loader: ()=> fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot')
     },
      { path: "/viewdetails/:id",
       element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-      loader:({params}) => fetch(`http://localhost:5000/TouristsSpot/${params.id}`)
+      loader:({params}) => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${params.id}`)
     },
      { path: "/mylist",
       element: <MyList></MyList>,
-      loader:() => fetch(`http://localhost:5000/TouristsSpot`)
+      loader:() => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot`)
     },
     {
       path:'/register',
@@ -54,12 +54,12 @@ const router = createBrowserRouter([
     },
     //  { path: "/users",
     //   element: <Users></Users>,
-    //   loader:() => fetch(`http://localhost:5000/users`)
+    //   loader:() => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/users`)
 
     // },
      { path: "/updatetouristsspot/:id",
       element: <PrivateRoute><UpdateTouristsSpot></UpdateTouristsSpot></PrivateRoute>,
-      loader:({params}) => fetch(`http://localhost:5000/TouristsSpot/${params.id}`)
+      loader:({params}) => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${params.id}`)
     },
     ]
   },
