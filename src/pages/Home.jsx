@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import TouristsSpotsSection from "../components/TouristsSpotsSection";
 import { useEffect, useState } from "react";
 import CountryCard from "../components/CountryCard";
+import Banner from "../components/Banner";
 
 const Home = () => {
 
@@ -14,7 +15,7 @@ const Home = () => {
     }, [])
     return (
         <div>
-            
+            <Banner/>
             <div className="lg:grid grid-cols-3 gap-3">
 
             {
