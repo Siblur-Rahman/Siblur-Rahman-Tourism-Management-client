@@ -18,8 +18,8 @@ import Login from './pages/Login.jsx';
 import UpdateTouristsSpot from './pages/UpdateTouristsSpot.jsx';
 import Register from './pages/Register.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
-import Users from './pages/Users.jsx';
 import PrivateRoute from './routes/PrivateRoute'
+import SportsSameCountries from './pages/SportsSameCountries';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +41,9 @@ const router = createBrowserRouter([
       element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
       loader:({params}) => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${params.id}`)
     },
+     { path: "/sportssamecountriy/:country_name",
+      element: <SportsSameCountries/>
+    },
      { path: "/mylist",
       element: <MyList></MyList>,
       loader:() => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot`)
@@ -52,11 +55,6 @@ const router = createBrowserRouter([
      { path: "/login",
       element: <Login></Login>,
     },
-    //  { path: "/users",
-    //   element: <Users></Users>,
-    //   loader:() => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/users`)
-
-    // },
      { path: "/updatetouristsspot/:id",
       element: <PrivateRoute><UpdateTouristsSpot></UpdateTouristsSpot></PrivateRoute>,
       loader:({params}) => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${params.id}`)

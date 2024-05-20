@@ -12,6 +12,7 @@ const AddTouristsSpot = () => {
         const image = form.image.value;
         const tourists_spot_name = form.tourists_spot_name.value;
         const country_Name = form.country_Name.value;
+        const average_cost = form.average_cost.value;
         const location = form.location.value;
         const short_description = form.short_description.value;
         const seasonality = form.seasonality.value;
@@ -19,7 +20,7 @@ const AddTouristsSpot = () => {
         const totaVisitorsPerYear = form.totaVisitorsPerYear.value;
         const UserEmail = user.email;
         const UserName = form.UserName.value;
-        const newTouristsSpot ={image, tourists_spot_name, country_Name, location, short_description, seasonality, travel_time, totaVisitorsPerYear, UserEmail, UserName}
+        const newTouristsSpot ={image, tourists_spot_name, country_Name, average_cost, location, short_description, seasonality, travel_time, totaVisitorsPerYear, UserEmail, UserName}
         console.log(newTouristsSpot)
         fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot', {
           method: 'POST',
@@ -61,6 +62,13 @@ const AddTouristsSpot = () => {
                         <input type="text" name="tourists_spot_name" placeholder="tourists spot name" className="input input-bordered" required />
                     </div>
 
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="">Average cost</span>
+                        </label>
+                        <input type="text" name="average_cost" placeholder="Average cost" className="input input-bordered" required />
+                    </div>
+                    
                     {/* country_Name */}
                     <div className="form-control">
                         <label className="label">
@@ -123,7 +131,7 @@ const AddTouristsSpot = () => {
                         <label className="label">
                             <span className="">User Name</span>
                         </label>
-                        <input type="text" name="UserName" defaultValue={user.name}className="input input-bordered" />
+                        <input type="text" name="UserName" defaultValue={user.displayName}className="input input-bordered" />
                     </div>
                     
                     <input type="submit" value="Add TouristsSpot" className="mt-5 w-full btn btn-success"/>
