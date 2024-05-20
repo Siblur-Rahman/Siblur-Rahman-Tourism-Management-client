@@ -26,7 +26,7 @@ const UpdateTouristsSpot = () => {
         const UserEmail = user.email;
         const UserName = form.UserName.value;
         const updatedTouristsSpot ={image, tourists_spot_name, country_Name, average_cost, location, short_description, seasonality, travel_time, totaVisitorsPerYear, UserEmail, UserName}
-        fetch(`http://localhost:5000/TouristsSpot/${_id}`, {
+        fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${_id}`, {
           method: 'PUT',
           headers:{
             'content-type': 'application/json'
