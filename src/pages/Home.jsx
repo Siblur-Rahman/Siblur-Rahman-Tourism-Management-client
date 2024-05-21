@@ -3,7 +3,12 @@ import TouristsSpotsSection from "../components/TouristsSpotsSection";
 import { useEffect, useState } from "react";
 import CountryCard from "../components/CountryCard";
 import Banner from "../components/Banner";
+import {Cursor, useTypewriter } from 'react-simple-typewriter'
 const Home = () => {
+    const [text] = useTypewriter({
+        words: ['Hello', 'Thank You', 'For Visiting', 'Our WebSite'],
+        loop: 0
+      })
 
     const spots = useLoaderData();
     const [countries, setCountries] = useState([]);
@@ -14,6 +19,7 @@ const Home = () => {
     }, [])
     return (
         <div>
+            <div className="text-3xl text-red-500">{text}<Cursor cursorColor='red' /></div>
             <Banner/>
             <div className="lg:grid grid-cols-3 gap-3">
 
