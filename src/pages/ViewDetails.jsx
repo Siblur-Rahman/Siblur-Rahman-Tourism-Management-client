@@ -13,7 +13,7 @@ const ViewDetails = () => {
                 <h2 className="card-title">{tourists_spot_name}</h2>
                 <h2 className="card-title">User Name{UserName}</h2>
                 <hr className="mt-5 border-2"/>
-                <p>Average cost: {average_cost}</p>
+                <p>Average cost: <span className="bg-yellow-500 rounded-lg text-gray-100">${average_cost}</span></p>
                 <p>Seasonality: {seasonality}</p>
                 <p>Travel time{travel_time}</p>
                 <p>Location: {location}</p>
