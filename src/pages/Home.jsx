@@ -3,7 +3,6 @@ import TouristsSpotsSection from "../components/TouristsSpotsSection";
 import { useEffect, useState } from "react";
 import CountryCard from "../components/CountryCard";
 import Banner from "../components/Banner";
-
 const Home = () => {
 
     const spots = useLoaderData();

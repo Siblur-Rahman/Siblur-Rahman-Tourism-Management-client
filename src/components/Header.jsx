@@ -3,7 +3,8 @@ import { useContext } from "react";
 import {NavLink } from "react-router-dom";
 import { AuthContext } from '../providers/AuthProvider';
 import { toast } from "react-toastify";
-
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 const Header = () => {
 
         const { user, logOut } = useContext(AuthContext);
@@ -17,17 +18,17 @@ const Header = () => {
 
 
         const navLink =<>
-            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/" data-tooltip-id="my-tooltip" data-tooltip-content="Click Me to go Home">Home</NavLink></li>
             
             {!user && <>
-                <li><NavLink to="/login">Login</NavLink></li>
-                 <li><NavLink to="/register">Register</NavLink></li>
+                <li><NavLink to="/login" data-tooltip-id="my-tooltip" data-tooltip-content="Click Me to go Login Page">Login</NavLink></li>
+                 <li><NavLink to="/register" data-tooltip-id="my-tooltip" data-tooltip-content="Click Me to go to Register">Register</NavLink></li>
             </>}
             {user && <>
-                 <li><NavLink to={`/mylist`}>My List</NavLink></li>
-                <li><NavLink to="/addtouristsspot">AddTouristsSpot</NavLink></li>
+                 <li><NavLink to={`/mylist`} data-tooltip-id="my-tooltip" data-tooltip-content="Click Me to go to My List">My List</NavLink></li>
+                <li><NavLink to="/addtouristsspot" data-tooltip-id="my-tooltip" data-tooltip-content="Click Me to go to AddTouristsSpo">AddTouristsSpot</NavLink></li>
             </>}
-            <li><NavLink to="/alltouristsspot">All Tourists Spot</NavLink></li>
+            <li><NavLink to="/alltouristsspot" data-tooltip-id="my-tooltip" data-tooltip-content="Click Me to go All Tourists Spot">All Tourists Spot</NavLink></li>
             {/* <li><NavLink to="/users">Users</NavLink></li> */}
             </>
     return (
@@ -42,7 +43,7 @@ const Header = () => {
                         {navLink}
                     </ul>
                     </div>
-                    <NavLink to="/" className="btn btn-ghost text-xl">TOURIST</NavLink>
+                    <NavLink to="/" className="btn btn-ghost text-xl" data-tooltip-id="my-tooltip" data-tooltip-content="Click Me to go Home">TOURIST</NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -71,7 +72,9 @@ const Header = () => {
                         </>
                     }
                 </div>
+                <Tooltip id="my-tooltip" />
             </div>
+            
     );
 };
 
