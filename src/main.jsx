@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       element: <SportsSameCountries/>
     },
      { path: "/mylist",
-      element: <MyList></MyList>,
+      element: <PrivateRoute><MyList></MyList></PrivateRoute>,
       loader:() => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot`)
     },
     {

@@ -15,8 +15,9 @@ const TouristsSpotsSection = ({sport}) => {
                 <figure className='bg-base-200 h-[230px] w-[320px] mx-auto'><img src={image} alt="" /></figure>
                 <div className="card-body">
 
-                        <h2 className="card-title">{country_Name}</h2>
-                    <h2 className="card-title"><span>{tourists_spot_name}</span><span className="bg-yellow-300 px-2 rounded-lg">{average_cost}</span></h2>
+                    <h2 className="card-title">{country_Name}</h2>
+                    <h2 className="card-title"><span>{tourists_spot_name}</span><span className="bg-yellow-300 px-2 rounded-lg">$
+                    {average_cost}</span></h2>
 
                     <hr className="mt-5 border-2"/>
                     <p>Location: {location}</p>
