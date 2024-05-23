@@ -32,6 +32,8 @@ const Home = () => {
                 
                 </div>,
                 <div>
+                     <h2 className="text-4xl mt-4 text-center mb-3 font-semibold text-red-500">Meny TouristSport in These Crountries</h2>
+
                     <div className="lg:grid grid-cols-3 gap-3">
 
                         {

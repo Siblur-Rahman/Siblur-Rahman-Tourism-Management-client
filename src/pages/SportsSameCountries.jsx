@@ -14,7 +14,8 @@ const [spots, setSpots] = useState([]);
     const countrySports = spots.filter(sport => sport.country_Name.toLowerCase() == country_name.toLowerCase())
 
     return (
-        <div className="lg:grid grid-cols-2 gap-3">
+            <>
+            <div className="lg:grid grid-cols-2 gap-3">
 
             {
                 countrySports.map(sport =><TouristsSpotsSection
@@ -22,7 +23,8 @@ const [spots, setSpots] = useState([]);
                     >
                     </TouristsSpotsSection>)
                 }
-        </div>
+            </div>
+            </>
     );
 };
 
