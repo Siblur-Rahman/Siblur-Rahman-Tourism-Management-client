@@ -27,7 +27,7 @@ const AllTouristsSpot = () => {
      <div>
                     <div className="w-full flex justify-center">
                 <details className="dropdown mb-32">
-                    <summary className="m-1 btn w-52 bg-success text-white hover:text-black font-extrabold text-2xl">Sort By</summary>
+                    <summary className="m-1 btn w-52 bg-success text-white font-extrabold text-2xl">Sort By</summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                         <li onClick={() =>handleSort('ascending')}><a className="justify-center text-xl">ascending</a></li>
                         <li onClick={() =>handleSort('descending')}><a className="justify-center text-xl">Descending</a></li>

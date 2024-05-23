@@ -19,7 +19,7 @@ const Home = () => {
     }, [])
     return (
         <div>
-            <div className="text-3xl text-red-500">{text}<Cursor cursorColor='red' /></div>
+            <div className="text-3xl text-red-500 text-center">{text}<Cursor cursorColor='red' /></div>
             <Banner/>
             <div className="lg:grid grid-cols-3 gap-3">
 

@@ -5,16 +5,19 @@ const CountryCard = ({courntry}) => {
 
     return (
         <Link to={`/sportssamecountriy/${country_Name}`}>
-                <div>
+                <div className="card shadow-xl border-2 p-2">
+                    <img src={image} alt="" className="h-56"/>
+                    <div className="card-body">
                     <h2 className="text-2xl">
                         {
                             country_Name
                         }
                     </h2>
-                    {
+                   <p> {
                         short_description
-                    }
-                    <img src={image} alt="" />
+                    }</p>
+                    </div>
+                    
                 </div>
         </Link>
     );
