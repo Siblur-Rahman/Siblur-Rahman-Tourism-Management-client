@@ -14,9 +14,9 @@ const AllTouristsSpots = ({sport}) => {
                 <hr className="mt-5 border-2"/>
                 <h2 className="card-title"><span>{tourists_spot_name}</span><span className="bg-yellow-300 px-2 rounded-lg">$ {average_cost}</span></h2>
                 <p>Seasonality: {seasonality}</p>
-                <p>Travel time{travel_time}</p>
+                <p>Travel time: {travel_time}</p>
                 <p>To taVisitors PerYear: {totaVisitorsPerYear}</p>
-                <p>User Email {UserEmail}</p>
+                <p>User Email: {UserEmail}</p>
                 <p>Description: {short_description}</p>
                 { user? <Link to={`/viewdetails/${_id}`} className="btn btn-success">View Details</Link>: <Link to={`/login`} className="btn btn-success">View Details</Link>}     
                 </div>
