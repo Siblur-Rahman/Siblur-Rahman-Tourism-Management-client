@@ -28,25 +28,25 @@ const router = createBrowserRouter([
     children:[
      { path: "/",
       element: <Home></Home>,
-      loader: ()=> fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot')
+      loader: ()=> fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot`)
     },
      { path: "/addtouristsspot",
       element: <AddTouristsSpot></AddTouristsSpot>,
     },
      { path: "/alltouristsspot",
       element: <AllTouristsSpot></AllTouristsSpot>,
-      loader: ()=> fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot')
+      loader: ()=> fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot`)
     },
      { path: "/viewdetails/:id",
       element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-      loader:({params}) => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${params.id}`)
+      loader:({params}) => fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot/${params.id}`)
     },
      { path: "/sportssamecountriy/:country_name",
       element: <SportsSameCountries/>
     },
      { path: "/mylist",
       element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-      loader:() => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot`)
+      loader:() => fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot`)
     },
     {
       path:'/register',
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
     },
      { path: "/updatetouristsspot/:id",
       element: <PrivateRoute><UpdateTouristsSpot></UpdateTouristsSpot></PrivateRoute>,
-      loader:({params}) => fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${params.id}`)
+      loader:({params}) => fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot/${params.id}`)
     },
     ]
   },

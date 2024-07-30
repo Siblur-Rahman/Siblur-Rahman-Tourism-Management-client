@@ -13,7 +13,7 @@ const Home = () => {
     const spots = useLoaderData();
     const [countries, setCountries] = useState([]);
     useEffect(() =>{
-        fetch('https://assignment-10-server-side-mu-gules.vercel.app/countries')
+        fetch(`${import.meta.env.VITE_API_URL}/countries`)
         .then(res => res.json())
         .then(data =>setCountries(data))
     }, [])

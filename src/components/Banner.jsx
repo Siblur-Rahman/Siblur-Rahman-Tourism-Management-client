@@ -9,7 +9,7 @@ import 'swiper/css/scrollbar';
 const Banner = () => {
   const [images, setImages] = useState([])
   useEffect(() =>{
-      fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot')
+      fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot`)
       .then(res => res.json())
       .then(data =>setImages(data))
   }, [])

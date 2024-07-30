@@ -20,7 +20,6 @@ const Header = () => {
             document.querySelector("html").setAttribute("data-theme", localTheme);
         },[theme])
         const { user, logOut } = useContext(AuthContext);
-        console.log(user)
 
         const handleLogOut = () =>{
             logOut()

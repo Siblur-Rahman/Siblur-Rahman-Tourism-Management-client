@@ -17,7 +17,7 @@ const MyListTr = ({sport, index}) => {
               }).then((result) => {
                 if (result.isConfirmed) {
     
-                fetch(`https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot/${_id}`,{
+                fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot/${_id}`,{
                     method: 'DELETE'
                 })
                 .then(res => res.json())

@@ -20,8 +20,8 @@ const navigate = useNavigate();
 
         createUser(email, password)
         .then(()=>{
-            const user = {email}
-            fetch('https://assignment-10-server-side-mu-gules.vercel.app/user',{
+            const user = {email, password}
+            fetch(`${import.meta.env.VITE_API_URL}/user`,{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

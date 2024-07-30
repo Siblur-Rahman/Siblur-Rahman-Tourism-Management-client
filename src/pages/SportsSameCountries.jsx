@@ -6,7 +6,7 @@ const SportsSameCountries = () => {
 const [spots, setSpots] = useState([]);
     const {country_name} = useParams();
     useEffect(() =>{
-        fetch('https://assignment-10-server-side-mu-gules.vercel.app/TouristsSpot')
+        fetch(`${import.meta.env.VITE_API_URL}/TouristsSpot`)
         .then(res => res.json())
         .then(data =>setSpots(data))
     }, [])
